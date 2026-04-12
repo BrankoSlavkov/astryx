@@ -1,0 +1,49 @@
+{
+  "name": "astryx",
+  "displayName": "Astryx",
+  "icon": "assets/icon.png",
+  "description": "VS Code theme for all the people who love to code in deep dark spaces. Also for Cursor, Windsurf, and Zed.",
+  "galleryBanner": {
+    "color": "#0b0c0f",
+    "theme": "dark"
+  },
+  "keywords": [
+    "vscode-theme",
+    "cursor-theme",
+    "windsurf",
+    "zed-theme"
+  ],
+  "version": "0.1.0",
+  "publisher": "astryx",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrankoSlavkov/astryx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BrankoSlavkov/astryx/issues"
+  },
+  "homepage": "https://github.com/BrankoSlavkov/astryx",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Astryx",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Astryx-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "render:icon": "bun run scripts/render-icon.mjs",
+    "package": "vsce package --no-dependencies --allow-package-all-secrets --allow-package-env-file",
+    "publish": "vsce publish --no-dependencies --allow-package-all-secrets --allow-package-env-file"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "3.7.1",
+    "sharp": "^0.34.5"
+  }
+}

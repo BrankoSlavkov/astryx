@@ -1,0 +1,11 @@
+.vscode/**
+scripts/**
+zed/**
+node_modules/**
+.git/**
+**/*.vsix
+docs/**
+bun.lock
+bun.lockb
+package-lock.json
+yarn.lock
