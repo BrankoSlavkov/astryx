@@ -32,6 +32,8 @@ Publishing is **not** done from this repo with a single CLI login. You open a pu
 5. Ensure [`LICENSE`](LICENSE) stays at the **extension root** (this repo root) — required for publishing.
 6. Open a PR; after merge, Zed packages and lists the extension.
 
+If a local **`zed-extensions-fork`** clone with branch **`add-astryx-theme`** is already prepared (submodule + `extensions.toml` entry), follow [docs/publish-zed-pr.md](docs/publish-zed-pr.md) to push it to your fork and open the PR.
+
 For troubleshooting: **Zed → Open Log** or run `zed --foreground` from a terminal.
 
 ----------
