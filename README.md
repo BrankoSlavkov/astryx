@@ -38,14 +38,14 @@ Use **Extensions → Install Dev Extension** and choose the [`zed/`](zed/) folde
 
 Follow the [official publishing guide](https://code.visualstudio.com/api/working-with-extensions/publishing-extension). Summary:
 
-1. **Publisher ID** — [`package.json`](package.json) uses `"publisher": "astryx"`. Create a publisher with **that exact ID** (or change `publisher` in `package.json` to match the ID you register). [Create or manage publishers](https://marketplace.visualstudio.com/manage).
+1. **Publisher ID** — [`package.json`](package.json) uses `"publisher": "astryx-waveco"`, which must match the **ID** shown on your [publisher](https://marketplace.visualstudio.com/manage) (not necessarily the display name). [Create or manage publishers](https://marketplace.visualstudio.com/manage).
 
 2. **Personal Access Token (PAT)** — In [Azure DevOps](https://dev.azure.com), open **User settings → Personal access tokens → New Token**. Set **Organization** to **All accessible organizations**, **Expiration** as you prefer, and under **Scopes** choose **Custom defined** → **Marketplace** → **Manage** (Acquire & Manage). Create the token and copy it once.
 
 3. **Log in** (from this repo, with `bun` / `vsce` available):
 
    ```bash
-   bunx vsce login astryx
+   bunx vsce login astryx-waveco
    ```
 
    Paste the PAT when prompted. Alternatively set `VSCE_PAT` to the token and run `bun run publish` (some setups skip `login` when `VSCE_PAT` is set—see `vsce --help`).
@@ -55,6 +55,10 @@ Follow the [official publishing guide](https://code.visualstudio.com/api/working
    ```bash
    bun run publish
    ```
+
+   The listing ID will be **`astryx-waveco.astryx`** (`<publisher>.<name>` from `package.json`).
+
+   On the Marketplace publisher **Details** page, set **Source code repository** to the repo root — `https://github.com/BrankoSlavkov/astryx` — not a `/blob/...` URL to a single file.
 
    For later updates, bump `version` in [`package.json`](package.json) (or use `bunx vsce publish patch` / `minor` / `major` per the docs), then publish again.
 
