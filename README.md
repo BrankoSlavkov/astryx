@@ -36,19 +36,6 @@ For troubleshooting: **Zed → Open Log** or run `zed --foreground` from a termi
 
 ----------
 
-## Optional: regenerate PNG icons from SVG
-
-Requires [Bun](https://bun.sh/):
-
-```bash
-bun install
-bun run render:icon
-```
-
-Writes [`assets/icon.png`](assets/icon.png) (128×128) and [`assets/logo-512.png`](assets/logo-512.png) from [`assets/logo.svg`](assets/logo.svg).
-
-----------
-
 ## Credits
 
 Astryx is inspired by [Celestial](https://github.com/apvarun/celestial-theme) (Horizon-derived). The Zed theme JSON was bootstrapped from [Dracula for Zed](https://github.com/dracula/zed)-style structure and recolored; tune further in the [Zed Theme Builder](https://zed.dev/theme-builder).

@@ -1,9 +1,0 @@
-{
-  "private": true,
-  "scripts": {
-    "render:icon": "bun run scripts/render-icon.mjs"
-  },
-  "devDependencies": {
-    "sharp": "^0.34.5"
-  }
-}
