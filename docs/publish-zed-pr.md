@@ -1,6 +1,8 @@
 # Open a PR to list Astryx on Zed
 
-Your theme repo must stay public and up to date on GitHub (`extension.toml` + `themes/astryx.json` at the root).
+1. **Push this repo first:** `git push origin main` so GitHub has the same commit as the submodule pointer in the extensions index (CI clones `BrankoSlavkov/astryx` by SHA).
+
+Your theme repo must stay public (`extension.toml` + `themes/astryx.json` at the root).
 
 ## Prepared extensions index (local)
 
