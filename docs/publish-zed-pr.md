@@ -12,7 +12,7 @@ A clone of `zed-industries/extensions` may already exist on your machine with:
 - `[astryx]` entry in `extensions.toml` with `version = "0.1.0"` (keep in sync with `extension.toml` when you bump versions)
 - Branch: **`add-astryx-theme`**, commit: **Add astryx theme extension**
 
-Typical path (adjust if yours differs): `../zed-extensions-fork` next to this repo.
+A prepared clone often lives next to this repo as **`zed-extensions-fork`** (branch **`add-astryx-theme`**).
 
 ## Push and open the PR
 
