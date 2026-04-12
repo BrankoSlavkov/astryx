@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo-text.png" alt="Astryx" width="420" />
+  <img src="assets/logo-text.svg" alt="Astryx" width="280" height="66" />
 </p>
 
 ## Zed theme — for all the people who love to code in deep dark spaces.
