@@ -19,21 +19,6 @@ Use this while you develop or before the theme is on the Zed registry.
 
 Restart or reload if needed, then pick **Astryx** in **theme** / appearance settings.
 
-----------
-
-## Publish to the Zed extension registry
-
-Publishing is **not** done from this repo with a single CLI login. You open a pull request to the official extensions index:
-
-1. Read the [Publishing Prerequisites](https://zed.dev/docs/extensions/publishing/prerequisites) and [Publishing Guide](https://zed.dev/docs/extensions/publishing/publishing-guide). Theme extension IDs must indicate a theme, hence `astryx-theme`.
-2. Fork [`zed-industries/extensions`](https://github.com/zed-industries/extensions).
-3. Add this repo as a **git submodule** under `extensions/astryx-theme` with an **HTTPS** URL, matching the `id` in [`extension.toml`](extension.toml).
-4. Add an `[astryx-theme]` entry to the root `extensions.toml` with the same `version` as [`extension.toml`](extension.toml), then run `pnpm sort-extensions`.
-5. Ensure [`LICENSE`](LICENSE) stays at the **extension root** (this repo root) — required for publishing.
-6. Open a PR; after merge, Zed packages and lists the extension.
-
-Step-by-step commands: [docs/publish-zed-pr.md](docs/publish-zed-pr.md).
-
 For troubleshooting: **Zed → Open Log** or run `zed --foreground` from a terminal.
 
 ----------
