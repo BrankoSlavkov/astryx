@@ -1,36 +1,50 @@
 # Open a PR to list Astryx on Zed
 
-1. **Push this repo first:** `git push origin main` so GitHub has the same commit as the submodule pointer in the extensions index (CI clones `BrankoSlavkov/astryx` by SHA).
+Follow Zed's [Publishing Prerequisites](https://zed.dev/docs/extensions/publishing/prerequisites) and [Publishing Guide](https://zed.dev/docs/extensions/publishing/publishing-guide).
 
-Your theme repo must stay public (`extension.toml` + `themes/astryx.json` at the root).
+## Before the PR
 
-## Prepared extensions index (local)
+1. **Push this repo:** `git push origin main`. The submodule pointer in the extensions index must be a commit that exists on a branch of `BrankoSlavkov/astryx`.
+2. **Test in Zed at that commit:** install this folder as a dev extension (see the main [README](../README.md)), select **Astryx**, and check the editor, panels, terminal and git gutter.
 
-A clone of `zed-industries/extensions` may already exist on your machine with:
+The theme repo must stay public, with `extension.toml`, `themes/astryx.json` and `LICENSE` at the root.
 
-- Submodule `extensions/astryx` → `https://github.com/BrankoSlavkov/astryx.git`
-- `[astryx]` entry in `extensions.toml` with `version = "0.1.0"` (keep in sync with `extension.toml` when you bump versions)
-- Branch: **`add-astryx-theme`**, commit: **Add astryx theme extension**
+## Extensions index branch
 
-A prepared clone often lives next to this repo as **`zed-extensions-fork`** (branch **`add-astryx-theme`**).
+```bash
+git clone --filter=blob:none https://github.com/zed-industries/extensions.git zed-extensions-fork
+cd zed-extensions-fork
+git remote rename origin upstream
+git remote add origin git@github.com:YOUR_GITHUB_USERNAME/extensions.git
+git checkout -b add-astryx-theme
 
-## Push and open the PR
+git submodule add https://github.com/BrankoSlavkov/astryx.git extensions/astryx-theme
+```
 
-1. **Fork** [zed-industries/extensions](https://github.com/zed-industries/extensions) on GitHub (if you have not already).
+Add to `extensions.toml` (version must match `extension.toml` at the submodule commit):
 
-2. In the prepared clone:
+```toml
+[astryx-theme]
+submodule = "extensions/astryx-theme"
+version = "0.1.0"
+```
 
-   ```bash
-   cd /path/to/zed-extensions-fork
-   git remote rename origin upstream
-   git remote add origin https://github.com/YOUR_GITHUB_USERNAME/extensions.git
-   git push -u origin add-astryx-theme
-   ```
+Then sort, commit and push:
 
-   Replace `YOUR_GITHUB_USERNAME` with your account (fork URL).
+```bash
+pnpm install
+pnpm sort-extensions
+git add .gitmodules extensions.toml extensions/astryx-theme
+git commit -m "Add astryx-theme"
+git push -u origin add-astryx-theme
+```
 
-3. On GitHub, open **Compare & pull request** from `add-astryx-theme` into `zed-industries/extensions` **main**.
+## Open the PR
 
-4. Wait for review; maintainers may ask for tweaks (version, license, naming).
+1. On GitHub, open **Compare & pull request** from `YOUR_GITHUB_USERNAME:add-astryx-theme` into `zed-industries/extensions` **main**.
+2. Write the description yourself. The repo's [AI policy](https://github.com/zed-industries/extensions/blob/main/AI_POLICY.md) rejects AI-written PR bodies and maintainer replies.
+3. Respond to maintainer feedback within **3 weeks**, or the PR is closed as stale.
 
-If you start from a **fresh fork clone** instead of the prepared folder, repeat the submodule + `extensions.toml` steps from the main [README](../README.md) or copy the two changes from this prepared branch.
+## Updating later
+
+Bump `version` in `extension.toml`, push, then open a PR that moves the `extensions/astryx-theme` submodule to the new commit and bumps the matching `version` in `extensions.toml`.

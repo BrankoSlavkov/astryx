@@ -25,14 +25,14 @@ Restart or reload if needed, then pick **Astryx** in **theme** / appearance sett
 
 Publishing is **not** done from this repo with a single CLI login. You open a pull request to the official extensions index:
 
-1. Read [Developing Extensions](https://zed.dev/docs/extensions/developing-extensions) and [Theme Extensions](https://zed.dev/docs/extensions/themes).
+1. Read the [Publishing Prerequisites](https://zed.dev/docs/extensions/publishing/prerequisites) and [Publishing Guide](https://zed.dev/docs/extensions/publishing/publishing-guide). Theme extension IDs must indicate a theme, hence `astryx-theme`.
 2. Fork [`zed-industries/extensions`](https://github.com/zed-industries/extensions).
-3. Add your repo as a **git submodule** under `extensions/astryx` (or another unique id), **HTTPS** URL, matching the `id` in [`extension.toml`](extension.toml).
-4. Add an entry to the root `extensions.toml` in that repo and bump the version to match `extension.toml`.
+3. Add this repo as a **git submodule** under `extensions/astryx-theme` with an **HTTPS** URL, matching the `id` in [`extension.toml`](extension.toml).
+4. Add an `[astryx-theme]` entry to the root `extensions.toml` with the same `version` as [`extension.toml`](extension.toml), then run `pnpm sort-extensions`.
 5. Ensure [`LICENSE`](LICENSE) stays at the **extension root** (this repo root) — required for publishing.
 6. Open a PR; after merge, Zed packages and lists the extension.
 
-If a local **`zed-extensions-fork`** clone with branch **`add-astryx-theme`** is already prepared (submodule + `extensions.toml` entry), follow [docs/publish-zed-pr.md](docs/publish-zed-pr.md) to push it to your fork and open the PR.
+Step-by-step commands: [docs/publish-zed-pr.md](docs/publish-zed-pr.md).
 
 For troubleshooting: **Zed → Open Log** or run `zed --foreground` from a terminal.
 
