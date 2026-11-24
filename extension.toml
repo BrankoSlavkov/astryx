@@ -1,6 +1,6 @@
 id = "astryx-theme"
 name = "Astryx"
-version = "0.1.0"
+version = "0.1.1"
 schema_version = 1
 authors = ["Astryx"]
 description = "Dark theme for all the people who love to code in deep dark spaces."
