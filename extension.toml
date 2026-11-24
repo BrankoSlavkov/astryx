@@ -2,6 +2,6 @@ id = "astryx-theme"
 name = "Astryx"
 version = "0.1.1"
 schema_version = 1
-authors = ["Astryx"]
+authors = ["WaveCo <https://github.com/BrankoSlavkov>"]
 description = "Dark theme for all the people who love to code in deep dark spaces."
 repository = "https://github.com/BrankoSlavkov/astryx"
